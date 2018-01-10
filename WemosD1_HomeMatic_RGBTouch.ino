@@ -9,7 +9,7 @@
 #include <ArduinoJson.h>
 #include <WiFiManager.h>
 
-#define ESP_SPI_FREQ 8000000L
+#define ESP_SPI_FREQ 16000000L
 
 #define IPSIZE                16
 #define VARIABLESIZE         255
@@ -56,8 +56,8 @@ int buttonWidth = 50;
 int buttonHeight = 60;
 int buttonOffX = 20;
 int buttonOffY = 170;
-int buttonOnY = 170;
 int buttonOnX = 244;
+int buttonOnY = 170;
 
 int wifiIconX = 210;
 int wifiIconY = 108;
@@ -74,24 +74,37 @@ unsigned long lastSyncMillis = 0;
 
 //bool Debug = false;
 bool startWifiManager = false;
+bool startCalibration = false;
 bool wm_shouldSaveConfig = false;
 bool isRGBavailable = true;
 bool isDIMavailable = true;
 String lastLEVELValue = "";
 String lastCOLORValue = "";
 
+
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH);
+  pinMode(D0, INPUT);
   SPI.setFrequency(ESP_SPI_FREQ);
   myGLCD.InitLCD(LANDSCAPE);
   myGLCD.clrScr();
   myGLCD.setFont(BigFont);
   myGLCD.setColor(255, 255, 255);
   Serial.begin(115200);
-  myTouch.begin((uint16_t)myGLCD.getDisplayYSize(), (uint16_t)myGLCD.getDisplayXSize());  // Must be done before setting rotation
-  myTouch.setCalibration(206, 1735, 1728, 246);
+
+  myTouch.begin((uint16_t)myGLCD.getDisplayYSize(), (uint16_t)myGLCD.getDisplayXSize());
+
+  startCalibration = (digitalRead(D0) == HIGH) ;
+
+  if (startCalibration) {
+    calibrate();
+    ESP.restart();
+  }
+
+
   myTouch.setRotation(myTouch.ROT270);
+  myTouch.setCalibration(244, 1735, 1728, 264);
+
 
   if (!loadSystemConfig()) startWifiManager = true;
   if (myTouch.isTouching()) startWifiManager = true;
@@ -113,7 +126,7 @@ void setup() {
     startOTAhandling();
     myGLCD.clrScr();
     slider_init();
-    if (isDIMavailable) button_init();
+    if (isDIMavailable) on_off_button_init();
   }
 }
 
@@ -181,7 +194,7 @@ void slider_init() {
   }
 }
 
-void button_init() {
+void on_off_button_init() {
   //AN / AUS BUTTONS
   myGLCD.setColor(0, 0, 255);
   myGLCD.fillRoundRect (buttonOffX, buttonOffY, buttonOffX + buttonWidth, buttonOffY + buttonHeight);
