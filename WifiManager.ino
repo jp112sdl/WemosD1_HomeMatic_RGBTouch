@@ -26,13 +26,11 @@ bool doWifiConnect() {
     while (WiFi.status() != WL_CONNECTED) {
       waitCounter++;
       Serial.print(".");
-      digitalWrite(LED_BUILTIN, (!(digitalRead(LED_BUILTIN))));
       if (waitCounter == 30) {
         return false;
       }
       delay(500);
     }
-    digitalWrite(LED_BUILTIN, LOW);
     Serial.println("Wifi Connected");
     printWifiStatus();
     return true;
