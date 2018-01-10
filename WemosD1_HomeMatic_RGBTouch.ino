@@ -94,7 +94,7 @@ void setup() {
 
   myTouch.begin((uint16_t)myGLCD.getDisplayYSize(), (uint16_t)myGLCD.getDisplayXSize());
 
-  startCalibration = (digitalRead(D0) == HIGH) ;
+  //startCalibration = (digitalRead(D0) == HIGH) ;
 
   if (startCalibration) {
     calibrate();
