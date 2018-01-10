@@ -11,9 +11,19 @@ Es ist **keine** Zusatzsoftware auf der CCU2 notwendig.
 - _bei Akkubetrieb empfiehlt sich zusätzlich noch ein Wemos BatteryShield und ein 3.7V LiPo Akku_
   - _auf die Stromversorgung wird hier nicht weiter eingegangen_
   
-###  
+### Verdrahtung:
+<img src="https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/wiring.png" width=400><br>
+Die Fritzing-Datei kann auch [heruntergeladen](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/Schaltplan.fzz) werden.
 
+### Inbetriebnahme:
+1. Touchscreen berühren
+2. Gerät einschalten
+3. AP-Modus wird gestartet
+<img src="https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/ap_modus.jpg" width=200><br>
+4. Nach neuen WLANs am Notebook suchen und mit dem WLAN WemosD1-xx:xx:xx:xx:xx:xx verbinden
+5. Konfigurationsseite öffnen: http://192.168.4.1
 
-Wiring: [Link](http://usemodj.com/2016/03/21/esp8266-display-2-8-inch-touch-lcd-with-wemos-d1-mini-board/)<br>
-Config (Start device keeping touchscreen touched):
 ![wificonfig](Images/wifi_config.png)
+
+### Gehäuse:
+Mein verwendetes Gehäuse gibt es als [.stl](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMatic%20RGB%20Dimmer.stl) und als [.obj](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMaticRGBDimmerOBJ.zip) im komprimierten zip-File.
