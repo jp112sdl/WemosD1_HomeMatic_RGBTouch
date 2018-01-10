@@ -1,4 +1,4 @@
-# WemosD1_HomeMatic_RGBTouch
+# WemosD1 HomeMatic RGBTouch Controller
 TFT/Touchscreen-Fernbedienung für HomeMatic RGB Controller und/oder UP-Dimmer<br>
 Die Steuerung erfolgt direkt über die Seriennummer des HomeMatic-Geräts.<br>
 Es ist **keine** Zusatzsoftware auf der CCU2 notwendig.
