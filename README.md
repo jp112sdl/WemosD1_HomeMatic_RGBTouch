@@ -30,8 +30,10 @@ Die Fritzing-Datei kann auch [heruntergeladen](https://github.com/jp112sdl/Wemos
 - ON_LEVEL: Die Buttons AN und AUS am rechten Bildschirmrand dienen dem schnellen Ein- und Ausschalten des UP-Dimmers. Bei "AUS" wird 0% angefahren, bei "EIN" der im ON_LEVEL definierte Wert.
 - HM Sync: wenn aktiviert, wird alle 30 Sekunden die CCU2 abgefragt, ob die angezeigten Werte noch dem IST-Zustand entsprechen. Wenn nicht (weil bspw. jemand per Schalter den Dimmer betätigt hat) wird der neue/aktuelle Wert am TFT angezeigt.
 
+
+
 ### Gehäuse:
 Mein verwendetes Gehäuse gibt es als [.stl](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMatic%20RGB%20Dimmer.stl) und als [.obj](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMaticRGBDimmerOBJ.zip) im komprimierten zip-File.
 
-### Kalibrierung des Touchscreen
+### Kalibrierung des Touchscreens:
 - kommt noch :-) 
