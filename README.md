@@ -18,12 +18,12 @@ Die Fritzing-Datei kann auch [heruntergeladen](https://github.com/jp112sdl/Wemos
 ### Inbetriebnahme:
 1. Touchscreen berühren
 2. Gerät einschalten
-3. AP-Modus wird gestartet
+3. AP-Modus wird gestartet<br>
 <img src="https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/ap_modus.jpg" width=200><br>
 4. Nach neuen WLANs am Notebook suchen und mit dem WLAN WemosD1-xx:xx:xx:xx:xx:xx verbinden
-5. Konfigurationsseite öffnen: http://192.168.4.1
+5. Konfigurationsseite öffnen: http://192.168.4.1 und dort die Daten entsprechend eingeben, anschließend speichern.
 
-![wificonfig](Images/wifi_config.png)
+<img src="https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/wifi_config.png" width=400><br>
 
 ### Gehäuse:
 Mein verwendetes Gehäuse gibt es als [.stl](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMatic%20RGB%20Dimmer.stl) und als [.obj](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMaticRGBDimmerOBJ.zip) im komprimierten zip-File.
