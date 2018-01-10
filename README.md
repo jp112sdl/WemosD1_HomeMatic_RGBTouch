@@ -16,12 +16,11 @@ Es ist **keine** Zusatzsoftware auf der CCU2 notwendig.
 Die Fritzing-Datei kann auch [heruntergeladen](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/Schaltplan.fzz) werden.
 
 ### Inbetriebnahme:
-1. Touchscreen berühren
-2. Gerät einschalten
-3. AP-Modus wird gestartet<br>
+1. Touchscreen berühren und dabei das Gerät einschalten
+2. AP-Modus wird gestartet<br>
 <img src="https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/ap_modus.jpg" width=200><br>
-4. Nach neuen WLANs am Notebook suchen und mit dem WLAN WemosD1-xx:xx:xx:xx:xx:xx verbinden
-5. Konfigurationsseite öffnen: http://192.168.4.1 und dort die Daten entsprechend eingeben, anschließend speichern.
+3. Nach neuen WLANs am Notebook suchen und mit dem WLAN WemosD1-xx:xx:xx:xx:xx:xx verbinden
+4. Konfigurationsseite öffnen: http://192.168.4.1 und dort die Daten entsprechend eingeben, anschließend speichern.
 
 <img src="https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/wifi_config.png" width=400><br>
 
@@ -31,5 +30,10 @@ Die Fritzing-Datei kann auch [heruntergeladen](https://github.com/jp112sdl/Wemos
 - ON_LEVEL: Die Buttons AN und AUS am rechten Bildschirmrand dienen dem schnellen Ein- und Ausschalten des UP-Dimmers. Bei "AUS" wird 0% angefahren, bei "EIN" der im ON_LEVEL definierte Wert.
 - HM Sync: wenn aktiviert, wird alle 30 Sekunden die CCU2 abgefragt, ob die angezeigten Werte noch dem IST-Zustand entsprechen. Wenn nicht (weil bspw. jemand per Schalter den Dimmer betätigt hat) wird der neue/aktuelle Wert am TFT angezeigt.
 
+
+
 ### Gehäuse:
 Mein verwendetes Gehäuse gibt es als [.stl](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMatic%20RGB%20Dimmer.stl) und als [.obj](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMaticRGBDimmerOBJ.zip) im komprimierten zip-File.
+
+### Kalibrierung des Touchscreens:
+- kommt noch :-) 
