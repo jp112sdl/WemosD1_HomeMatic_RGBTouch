@@ -8,6 +8,8 @@ Es ist **keine** Zusatzsoftware auf der CCU2 notwendig.
 ### Bauteile:
 - 1x Wemos D1 mini
 - 1x TFT Touchscreen, ILI9341 kompatibel und mit SPI Anschluss (z.B. [hier](https://www.ebay.de/itm/172726994916))
+- 1x beliebiger Taster
+- 1x Widerstand, irgendwas zwischen 1k...10k Ohm (dient nur als Pullup)
 - _bei Akkubetrieb empfiehlt sich zusätzlich noch ein Wemos BatteryShield und ein 3.7V LiPo Akku_
   - _auf die Stromversorgung wird hier nicht weiter eingegangen_
   
@@ -36,4 +38,11 @@ Die Fritzing-Datei kann auch [heruntergeladen](https://github.com/jp112sdl/Wemos
 Mein verwendetes Gehäuse gibt es als [.stl](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMatic%20RGB%20Dimmer.stl) und als [.obj](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMaticRGBDimmerOBJ.zip) im komprimierten zip-File.
 
 ### Kalibrierung des Touchscreens:
-- kommt noch :-) 
+- Bei gedrücktem Taster den Wemos einschalten.<br>
+- Es erscheint ein Fadenkreuz in der Ecke oben links
+- Das Fadenkreuz (am besten mit einem Stift) antippen
+- Es erscheint ein Fadenkreuz in der Ecke unten rechts
+- Das Fadenkreuz (am besten mit einem Stift) antippen
+
+Die Kalibrierung ist nun beendet. Die Kalibrierungsdaten werden gespeichert und sind dauerhaft gespeichert.
+Der Vorgang kann jederzeit wiederholt werden
