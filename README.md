@@ -38,6 +38,7 @@ Die Fritzing-Datei kann auch [heruntergeladen](https://github.com/jp112sdl/Wemos
 Mein verwendetes Gehäuse gibt es als [.stl](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMatic%20RGB%20Dimmer.stl) und als [.obj](https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/HomeMaticRGBDimmerOBJ.zip) im komprimierten zip-File.
 
 ### Kalibrierung des Touchscreens:
+<img src="https://github.com/jp112sdl/WemosD1_HomeMatic_RGBTouch/blob/master/Images/calib1.jpg" width=200><br>
 - Bei gedrücktem Taster den Wemos einschalten.<br>
 - Es erscheint ein Fadenkreuz in der Ecke oben links
 - Das Fadenkreuz (am besten mit einem Stift) antippen
