@@ -46,3 +46,6 @@ Mein verwendetes Gehäuse gibt es als [.stl](https://github.com/jp112sdl/WemosD1
 
 Die Kalibrierung ist nun beendet. Die Kalibrierungsdaten werden gespeichert und sind dauerhaft gespeichert.
 Der Vorgang kann jederzeit wiederholt werden
+
+
+Wer "Danke" sagen möchte (in Form einer kleinen Spende), kann gern hier klicken: [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UBX8NFNYVWW8N)
