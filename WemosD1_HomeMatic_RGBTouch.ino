@@ -16,8 +16,10 @@
 #define ConfigPortalTimeout  180  //Timeout (Sekunden) des AP-Modus
 #define HTTPTimeOut         1500  //Timeout (Millisekunden) für http requests
 #define SYNCINTERVAL         30   //Sekunden
+#define CalibrationSwitch    D0   //Taster zum Starten der Touchscreen-Kalibrierung
 
 const String configJsonFile         = "tc.json";
+const String calibJsonFile          = "cal.json";
 
 extern unsigned  wifiicon32[1024];
 extern unsigned  RGBhorz_halb[27948];
@@ -42,6 +44,13 @@ struct hmconfig_t {
   bool enableSync = false;
   byte OnLevel = 100;
 } HomeMaticConfig;
+
+struct touchcalibration_t {
+  int P1 = 244;
+  int P2 = 1735;
+  int P3 = 1728;
+  int P4 = 264;
+} TouchCalibration;
 
 bool isDimTouching = false;
 bool isRGBTouching = false;
@@ -74,7 +83,6 @@ unsigned long lastSyncMillis = 0;
 
 //bool Debug = false;
 bool startWifiManager = false;
-bool startCalibration = false;
 bool wm_shouldSaveConfig = false;
 bool isRGBavailable = true;
 bool isDIMavailable = true;
@@ -84,7 +92,7 @@ String lastCOLORValue = "";
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(D0, INPUT);
+  pinMode(CalibrationSwitch, INPUT);
   SPI.setFrequency(ESP_SPI_FREQ);
   myGLCD.InitLCD(LANDSCAPE);
   myGLCD.clrScr();
@@ -94,24 +102,20 @@ void setup() {
 
   myTouch.begin((uint16_t)myGLCD.getDisplayYSize(), (uint16_t)myGLCD.getDisplayXSize());
 
-  //startCalibration = (digitalRead(D0) == HIGH) ;
-
-  if (startCalibration) {
+  if (digitalRead(CalibrationSwitch) == LOW) {
     calibrate();
-    ESP.restart();
+  } else {
+    loadCalibrationConfig();
   }
-
-
+  
   myTouch.setRotation(myTouch.ROT270);
-  myTouch.setCalibration(244, 1735, 1728, 264);
-
+  myTouch.setCalibration(TouchCalibration.P1, TouchCalibration.P2, TouchCalibration.P3, TouchCalibration.P4);
 
   if (!loadSystemConfig()) startWifiManager = true;
   if (myTouch.isTouching()) startWifiManager = true;
 
   isRGBavailable = (String(HomeMaticConfig.RGB_Dimmer_Serial) != "");
   isDIMavailable = (String(HomeMaticConfig.UP_Dimmer_Serial) != "");
-
 
   if (doWifiConnect() == false) {
     myGLCD.clrScr();
