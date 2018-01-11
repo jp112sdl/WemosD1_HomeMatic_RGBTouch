@@ -53,7 +53,7 @@ bool loadSystemConfig() {
 
 bool saveSystemConfig() {
   SPIFFS.begin();
-  Serial.println(F("saving config"));
+  Serial.println(F("saving system config"));
   DynamicJsonBuffer jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
   json[JSONCONFIG_IP] = WemosNetConfig.ip;
